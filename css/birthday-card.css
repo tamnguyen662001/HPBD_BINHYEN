@@ -53,7 +53,10 @@ body {
         max-height: unset;
 
     }
+
+    
 }
+
 
 img.birthday {
     max-height: 40vh;
@@ -76,16 +79,14 @@ img.birthday1 {
     height: 100px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-body.play-music {
-    animation: fadeIn 2s ease-in-out;
-}
+.counter {
+    text-align: center;
+  }
+  .counter h1 {
+    font-size: 3rem;
+    color: #ff6b6b;
+  }
+  .counter p {
+    font-size: 1.2rem;
+    color: #333;
+  }

@@ -1,4 +1,4 @@
-
+// ============== FIREWORK_START ==============//
 var w = c.width = window.innerWidth,
 	h = c.height = window.innerHeight,
 	ctx = c.getContext('2d'),
@@ -402,44 +402,37 @@ window.addEventListener('resize', function () {
 
 	ctx.font = opts.charSize + 'px Verdana';
 })
+// ============== FIREWORK_END ==============//
+
+// ============== PLAY SONG_START ==============//
+// let redirectTimeout;
+
+// function startRedirectCountdown() {
+
+// 	redirectTimeout = setTimeout(function () {
+// 		window.location.href = "birthday.html";
+// 	}, 13800);
+// }
+
+// function playMusic() {
+// 	var music = document.getElementById("birthdaySong");
+// 	var content = document.getElementById("content");
+// 	music.play();
+// 	document.getElementById("c").style.display = "block";
+// 	content.classList.add("hidden");
+
+// 	startRedirectCountdown();
+// }
 
 
-document.addEventListener("DOMContentLoaded", function () {
-	
-	const audio = document.getElementById("birthdaySong");
-	const canvas = document.getElementById("c");
-
-
-	// setTimeout(function () {
-	// 	const canvas = document.getElementById('c');
-
-	// 	if (canvas) {
-	// 		canvas.style.display = 'block'; // Hiển thị canvas
-	// 	}
-
-	// 	anim(); // Bắt đầu animation
-	// }, 4000); // 10 giây
-
-	const startAudioOnInteraction = () => {
-		audio.play().catch((error) => {
-			console.warn("Tự động phát nhạc bị chặn:", error);
-		});
-
-		// Xóa sự kiện click sau khi phát nhạc
-		canvas.removeEventListener("click", startAudioOnInteraction);
-	};
-
-	// Gắn sự kiện click lên canvas
-	canvas.addEventListener("click", startAudioOnInteraction);
-	
-	setTimeout(function () {
-		window.location.href = "birthday.html"; // Chuyển sang trang a.html
-	}, 15000); // 10 giây
-});
+let redirectTimeout;
 
 function playMusic() {
-    var music = document.getElementById("birthdaySong");
-    music.play(); // Phát nhạc khi nhấn nút
-    document.getElementById("c").style.display = "block"; // Hiển thị canvas khi nhấn nút
-    // draw(); // Bắt đầu vẽ hoạt hình
+    document.getElementById("birthdaySong").play(); // Phát nhạc
+    document.getElementById("c").style.display = "block"; // Hiển thị canvas
+    document.getElementById("content").classList.add("hidden"); // Ẩn nội dung
+
+    redirectTimeout = setTimeout(() => window.location.href = "birthday.html", 13800); // Chuyển trang sau 13.8s
 }
+
+// ============== PLAY SONG_END ==============//
